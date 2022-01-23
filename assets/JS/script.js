@@ -1,5 +1,5 @@
 
-
+// creating varariables and api key
 const apiKey = "9d3f8d0c8e62e5ad4c7157553bc15108";
 var currWeatherDiv = $("#currentWeather");
 var forecastDiv = $("#weatherForecast");
@@ -12,7 +12,7 @@ if (localStorage.getItem("localWeatherSearches")) {
     citiesArray = [];
 };
 
-
+// Getting specific weather data and added to current weather div in html
 function returnCurrentWeather(cityName) {
     let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=${apiKey}`;
 
@@ -30,7 +30,7 @@ function returnCurrentWeather(cityName) {
     })
 };
 
-
+// Creating 5 day cards and appending to the dom
 function returnWeatherForecast(cityName) {
     let queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&APPID=${apiKey}`;
 
@@ -61,7 +61,7 @@ function returnWeatherForecast(cityName) {
     })
 };
 
-
+// changing the uv index colors based on number ratings
 function returnUVIndex(coordinates) {
     let queryURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${coordinates.lat}&lon=${coordinates.lon}&APPID=${apiKey}`;
 
@@ -84,7 +84,7 @@ function returnUVIndex(coordinates) {
         currWeatherDiv.append(`<p>UV Index: <span class="text-${textColour} uvPadding" style="background-color: ${uvSeverity};">${currUVIndex}</span></p>`);
     })
 }
-
+// Creating History buttons 
 function createHistoryButton(cityName) {
     
     var citySearch = cityName.trim();
@@ -109,7 +109,7 @@ function writeSearchHistory(array) {
     })
 }
 
-
+// Creating defult weather location
 returnCurrentWeather("Perth");
 returnWeatherForecast("Perth");
 
@@ -125,6 +125,7 @@ $("#previousSearch").click(function() {
     returnCurrentWeather(cityName);
     returnWeatherForecast(cityName);
 });
+// adding clear search history button 
 $("#clearButton").on("click", function () {
     $("#localWeatherSearches").empty();
     $("#previousSearch").empty();
