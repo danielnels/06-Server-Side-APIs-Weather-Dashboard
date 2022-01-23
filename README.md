@@ -33,5 +33,6 @@ THEN I am again presented with current and future conditions for that city
 ## Mock-Up
 
 The following image shows the web application's appearance:
+![image](https://user-images.githubusercontent.com/94213022/150662358-32f9139c-6385-4f1d-9ef9-b0db0a5cec5d.png)
 
 ## Link to Deployed Application
