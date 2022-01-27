@@ -110,8 +110,8 @@ function writeSearchHistory(array) {
 }
 
 // Creating defult weather location
-returnCurrentWeather("Perth");
-returnWeatherForecast("Perth");
+// returnCurrentWeather("Perth");
+// returnWeatherForecast("Perth");
 
 $("#submitCity").click(function() {
     event.preventDefault();
